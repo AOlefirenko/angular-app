@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp run",
+    "postinstall": "jspm install"
+  },
+  "jspm": {
+    "directories": {},
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.3",
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
+      "less": "github:aaike/jspm-less-plugin@^0.0.5"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  },
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3"
+  }
+}
