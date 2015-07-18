@@ -9,7 +9,7 @@ import routesConfig from 'src/routes'
 app.config(routesConfig);
 
 app.directive('navMenu', common.NavMenuDDO);
-
+app.directive('someData', common.SomeData);
 
 
 angular.element(document).ready(function () {

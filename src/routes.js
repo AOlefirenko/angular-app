@@ -27,9 +27,34 @@ var RoutesConfig = function RoutesConfig($stateProvider, $urlRouterProvider) {
         })
         .state('app.library', {
             url: '/library',
+            abstract:true,
             views: {
                 'content@app': {
                     templateUrl: 'src/modules/library/library.partial.html',
+                }
+            }
+        })
+        .state('app.library.collections', {
+            url: '/collections',
+            views: {
+                'tabContent':{
+                    templateUrl: 'src/modules/library/collections/collections.html',
+                }
+            }
+        })
+        .state('app.library.items', {
+            url: '/items',
+            views: {
+                'tabContent': {
+                    templateUrl: 'src/modules/library/items/items.html'
+                }
+            }
+        })
+        .state('app.library.media', {
+            url: '/media',
+            views: {
+                'tabContent': {
+                    templateUrl: 'src/modules/library/media/media.html',
                 }
             }
         })
