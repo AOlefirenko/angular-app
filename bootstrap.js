@@ -1,5 +1,5 @@
 import {app} from 'src/app'
-import 'src/modules/common/layout.project.less!';
+//import 'src/modules/common/layout.project.less!';
 
 import common from 'src/modules/common/common.module'
 import routesConfig from 'src/routes'
