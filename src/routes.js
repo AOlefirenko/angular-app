@@ -27,7 +27,7 @@ var RoutesConfig = function RoutesConfig($stateProvider, $urlRouterProvider) {
         })
         .state('app.library', {
             url: '/library',
-            abstract:true,
+            abstract: true,
             views: {
                 'content@app': {
                     templateUrl: 'src/modules/library/library.partial.html',
@@ -37,7 +37,7 @@ var RoutesConfig = function RoutesConfig($stateProvider, $urlRouterProvider) {
         .state('app.library.collections', {
             url: '/collections',
             views: {
-                'tabContent':{
+                'tabContent': {
                     templateUrl: 'src/modules/library/collections/collections.html',
                 }
             }
@@ -68,13 +68,23 @@ var RoutesConfig = function RoutesConfig($stateProvider, $urlRouterProvider) {
         })
         .state('app.admin', {
             url: '/admin',
+            resolve: {
+                loadModule: ['lazySystem', function (lazySystem) {
+                    return lazySystem.load('src/modules/admin/admin.module').then(function (loadedModule) {
+                        console.log(loadedModule[0],'is loaded');
+                    });
+                }]
+            },
             views: {
                 'content@app': {
                     templateUrl: 'src/modules/admin/admin.partial.html',
+                    controller: ['author.admin.data', function (settings) {
+                        console.log('lazy loaded controller', settings);
+                    }]
                 }
             }
         })
 }
-RoutesConfig.$inject = ['$stateProvider','$urlRouterProvider'];
+RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 export default RoutesConfig;
