@@ -1,4 +1,4 @@
-//import 'src/modules/common/components/nav-menu/nav-menu.project.less!'
+import 'src/modules/common/components/nav-menu/nav-menu.project.less!'
 
 export default function NavMenuDDO() {
     return {
